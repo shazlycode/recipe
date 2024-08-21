@@ -51,6 +51,49 @@ class RecipeProvider with ChangeNotifier {
         image:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWXy4eASiSlUb2zrBqgROrDwBMRWWPDWbUJA&s",
         isFavorite: true),
+    Recipe(
+        id: "5",
+        name: "Recipe 5",
+        description: "Recipe 5 description",
+        price: 23.5,
+        image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWXy4eASiSlUb2zrBqgROrDwBMRWWPDWbUJA&s",
+        isFavorite: true),
+    Recipe(
+        id: "6",
+        name: "Recipe 6",
+        description: "Recipe 6 description",
+        price: 102.5,
+        image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWXy4eASiSlUb2zrBqgROrDwBMRWWPDWbUJA&s",
+        isFavorite: true),
+    Recipe(
+        id: "7",
+        name: "Recipe 7",
+        description: "Recipe 7 description",
+        price: 223.5,
+        image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWXy4eASiSlUb2zrBqgROrDwBMRWWPDWbUJA&s",
+        isFavorite: true),
+    Recipe(
+        id: "8",
+        name: "Recipe 8",
+        description: "Recipe 8 description",
+        price: 214.5,
+        image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWXy4eASiSlUb2zrBqgROrDwBMRWWPDWbUJA&s",
+        isFavorite: true),
   ];
   List<Recipe> get recipes => _recipes;
+
+  toggleFavorite(Recipe recipe) {
+    recipe.isFavorite = !recipe.isFavorite;
+    print(recipe.isFavorite);
+    notifyListeners();
+  }
+
+  getRecipeById(String id) {
+    recipes.firstWhere((e) => e.id == id);
+    notifyListeners();
+  }
 }
